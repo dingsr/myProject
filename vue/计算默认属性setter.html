@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{se}}</p>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            name:'yangt',
+            age:12,
+        },
+        computed:{
+            se:{
+                get: function(){
+                    return this.name+'\n'+this.age
+                },
+                set:function(vae){
+                    var name = vae.split(' ')
+                    this.name = name[0]
+                    this.url = name[1]
+                }
+            }
+        }
+    })
+    vm.se='my is frun'
+    document.write('name:'+vm.name) //访问方法内部属性需要通过调度者
+    document.write('url:'+'\t\t\t'+vm.url)
+</script>
+</html>

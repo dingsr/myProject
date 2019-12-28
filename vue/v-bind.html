@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<style>
+    .gai{
+        color: brown;
+        font-family: "楷体";
+        font-size: 16px;
+    }
+</style>
+<body>
+    <div id="ap">
+        <label for="co">请点击我修改颜色</label>
+        <input type="checkbox" id="co" v-model="ues">
+        <div v-bind:class="{'gai':ues}">
+            我是改变的位置
+        </div>
+        {{5+15}}
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#ap",
+        data:{
+            ues:false
+        }
+    })
+</script>
+</html>

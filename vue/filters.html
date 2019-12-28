@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="ap">
+        <p>{{maess | filte}}</p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#ap",
+        data:{
+            maess:"hoell word"
+        },
+        filters:{
+            filte:function(e){
+                if (!e) return 1
+                vaue = e.split('')
+                return vaue.reverse().join('')
+
+            }
+        }
+    })
+</script>
+</html>

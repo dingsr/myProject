@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>原字符串{{mas}}</p>
+        <p>计算属性{{mas1}}</p>
+        <p>方法{{mas2()}}</p>
+        <p v-html="to"></p>
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            mas:'wo hi',
+            to:'yangt'
+        },
+        /*computed or methods 区别 
+        computed只有在依赖（mas）发生改变的时候才会改变 （基于依赖的缓存）
+        methods在页面从新加载的时候就会调用方法
+        */
+        computed:{
+            mas1:function(){
+            return this.mas.split('').reverse().join('')
+            }
+        },
+        methods:{
+            mas2:function(){
+            return this.mas.split('').reverse().join('')
+            }
+        }
+})
+</script>
+</html>

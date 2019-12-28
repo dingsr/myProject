@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="ap">
+        <ol v-for="site in te">
+            <li >{{site}}</li>
+            <li>-------------------!</li>
+        </ol>
+        <ul>
+            <!-------v-for=" i in list"--------------------->
+            <li v-for="vale  in ofgd">
+                    {{vale}}
+            </li>
+        </ul>
+        
+        <ol>
+            <li v-for="(vale,key)  in ofgd1">
+                    {{vale}}:{{key}}
+            </li>
+        </ol>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:"#ap",
+        data:{
+            te:[
+                {name:'李晓'},
+                {name:'wangx'},
+                {name:'李晓'},
+            ],
+            //通过属性传值使用----{}
+            ofgd:{
+                name:'zhu',
+                url:'http:/www.baidu.com'
+            },
+            ofgd1:{
+                name:'zhu',
+                url:'http:/www.baidu.com'
+            }
+        }
+    })
+</script>
+</html>

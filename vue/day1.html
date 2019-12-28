@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="vew">
+        <p>{{mgs}}</p>
+        <p>{{des()}}</p>
+    </div>
+</body>
+<script>
+    data1 = {mgs:"我是一个属性"}
+    var ws = new Vue({
+        el:'#vew',
+        data:data1,
+        methods:{
+            des: function(){
+                return '我是一个方法定义的'
+            }
+        },
+    })
+    document.write('开始写入')
+    document.write(ws.mgs===data1.mgs,'-----')
+    document.write(ws.mgs='改过的属性值','<br>')
+    document.write(ws.$el === document.getElementById("vew"),'*******')
+    
+</script>
+</html>

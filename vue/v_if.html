@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./vue.min.js"></script>
+</head>
+<body>
+    <div id="ap">
+        <p v-if="seen">点我试试</p>
+        <input type="checkbox" v-model="use">
+        <template v-if="ok">
+            <p>现在可以看见了</p>
+            <p>在点我看看</p>
+        </template>
+        <div v-if="use">
+            <p>hi nihao</p>
+        </div>
+        <div>
+            <p v-show="ok1">hi boy</p>
+        </div>
+    </div>
+</body>
+<script>
+    var wd = new Vue({
+        el:"#ap",
+        data:{
+            seen:false,
+            ok:true,
+            use:false,
+            ok1:false,
+        }
+    })
+</script>
+</html>
